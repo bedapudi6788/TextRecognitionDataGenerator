@@ -26,7 +26,7 @@ def _generate_horizontal_text(
     space_width = int(image_font.getsize(" ")[0] * space_width)
 
     char_widths = [image_font.getsize(c)[0] if c != " " else space_width for c in text]
-    text_width = sum(char_widths) + character_spacing * (len(text) - 1)
+    text_width = sum(char_widths) + character_spacing * (len(text) - 1) * 1.5
     text_height = max([image_font.getsize(c)[1] for c in text]) * 2
 
     txt_img = Image.new("RGBA", (text_width, text_height), (0, 0, 0, 0))
