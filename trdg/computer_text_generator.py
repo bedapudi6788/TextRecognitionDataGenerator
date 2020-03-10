@@ -27,7 +27,7 @@ def _generate_horizontal_text(
 
     char_widths = [image_font.getsize(c)[0] if c != " " else space_width for c in text]
     text_width = sum(char_widths) + character_spacing * (len(text) - 1)
-    text_height = max([image_font.getsize(c)[1] for c in text])
+    text_height = max([image_font.getsize(c)[1] for c in text]) * 2
 
     txt_img = Image.new("RGBA", (text_width, text_height), (0, 0, 0, 0))
     txt_mask = Image.new("RGB", (text_width, text_height), (0, 0, 0))
